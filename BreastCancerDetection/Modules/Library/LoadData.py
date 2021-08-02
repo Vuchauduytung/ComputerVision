@@ -4,7 +4,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 path = os.path.dirname(os.path.abspath(__file__))
 parent_path = os.path.abspath(os.path.join(path, os.pardir, os.pardir))
 train_direct_path = os.path.join(parent_path, 'Data/Original/Train')
-validation_direct_path = os.path.join(parent_path, 'Data/Original/Validate')
+validation_direct_path = os.path.join(parent_path, 'Data/Original/Validation')
 
 def load_ds_data(image_size, batch_size):
       train_datagen = ImageDataGenerator(
