@@ -40,6 +40,7 @@ def load_ds_data(image_size, batch_size):
             save_to_dir=None,
             save_prefix="train",
             save_format="png",
+            color_mode = "grayscale"
             )        
 
       val_generator = val_datagen.flow_from_directory(
@@ -49,6 +50,7 @@ def load_ds_data(image_size, batch_size):
             save_to_dir=None,
             save_prefix="val",
             save_format="png",
+            color_mode = "grayscale"
             )
       return train_generator, val_generator
 

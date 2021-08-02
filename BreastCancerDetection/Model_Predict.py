@@ -34,6 +34,7 @@ def main():
         seed=seed,
         image_size=image_size,
         batch_size=batch_size,
+        color_mode = "grayscale"
         )
 
     result = model.predict(x = test_ds, 
