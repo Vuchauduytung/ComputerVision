@@ -15,7 +15,7 @@ class CustomCallback(keras.callbacks.Callback):
         
     def on_epoch_end(self, epoch, logs=None):
         self.stopped_epoch = epoch
-        # if epoch % 100 == 0 and epoch != 0:
+        # if (epoch - 1) % 100 == 0:
         #     stop = input('Continue train [y/n]:')
         #     if stop.lower() == 'n':
         #         self.model.stop_training = True
