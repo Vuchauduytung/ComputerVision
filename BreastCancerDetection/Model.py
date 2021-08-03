@@ -55,7 +55,7 @@ def main():
     except Exception as err:
         print(err)
     finally:
-        history_path = os.path.join(path, 'train-history', sys.argv[1].replace('.h5', '.json'))
+        history_path = os.path.join(path, 'train-history', sys.argv[1].replace('.h5', ''))
         with open(history_path, 'wb') as file_pi:
             pickle.dump(history.history, file_pi)
         val_loss, val_acc = model.evaluate(val_ds, verbose=2)

@@ -18,7 +18,7 @@ def main():
     dimension_2 = int(sys.argv[4])
     
     # model_name = 'breast_cancer_wieght_25x25_v3.h5'
-    # test_folder = 'Benign'
+    # test_folder = 'Malignant'
     # dimension_1 = 25
     # dimension_2 = 25
     
@@ -76,10 +76,12 @@ def main():
     try:
         shutil.rmtree(positive_target_path)
         shutil.rmtree(negative_target_path)
-    finally:
-        os.mkdir(positive_target_path)
-        os.mkdir(negative_target_path)
-        
+    except:
+        pass
+    
+    os.mkdir(positive_target_path)
+    os.mkdir(negative_target_path) 
+       
     for index, img in enumerate(os.listdir(test_data_path)):
         src = os.path.join(test_data_path, img)
         if class_true[index]:
