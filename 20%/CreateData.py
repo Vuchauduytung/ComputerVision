@@ -8,18 +8,20 @@ from pygame import mixer
 import time
 import pickle
 import pyautogui
+import time
 
 
 def main(): 
+    # typing_method = 'original'
+    typing_method = 'command line'
     
-    typing_method = 'original'
     print('\nWelcom to CreateData.py')
     path = os.path.dirname(os.path.abspath(__file__))
     sound_filename = 'Notification.mp3'
     sound_path = os.path.join(path, r'reference-files\notification-sound', sound_filename)
     mixer.init()
     mixer.music.load(sound_path)
-    created_data_folder_path = os.path.join(path, 'data\created-data') 
+    created_data_folder_path = os.path.join(path, 'data\positive') 
     cascade_filename = 'haarcascade_frontalface_alt.xml'
     cascade_path = os.path.join(path, 'reference-files\cascade-file\haarcascades', cascade_filename)
     face = cv2.CascadeClassifier(cascade_path)
@@ -33,6 +35,7 @@ def main():
     while(True): 
         if time.perf_counter() - start > 10: 
             mixer.music.play()
+            time.sleep(2)
             break
         frame = capture_image(capturing_method, cap)
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -60,7 +63,7 @@ def get_count(direct_path):
     all_filenames = os.listdir(direct_path)
     count = 0
     for filename in all_filenames: 
-        new_count = re.findall(r'\d+', filename)
+        new_count = int(re.findall(r'\d+', filename)[0])
         if new_count > count: 
             count = new_count
     return count
@@ -73,9 +76,9 @@ def get_image_size(typing_method):
         height_cmdl = sys.argv[2]
         width_cmdl = sys.argv[3]      
     if not height_cmdl.isnumeric(): 
-        raise Exception('Sorry, there == a typo:  invalid height')
+        raise Exception('Sorry, there is a typo:  invalid height')
     if not width_cmdl.isnumeric(): 
-        raise Exception('Sorry, there == a typo:  invalid width')
+        raise Exception('Sorry, there is a typo:  invalid width')
     height = int(height_cmdl)
     width = int(width_cmdl)
     return (height, width)
