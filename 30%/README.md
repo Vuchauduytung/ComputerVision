@@ -1,2 +1,0 @@
-# ComputerVision
---- Have fun =))) -----
