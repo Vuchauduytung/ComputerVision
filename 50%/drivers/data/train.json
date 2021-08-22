@@ -1,0 +1,29 @@
+{
+    "name" : "train_data",
+    "properties" : 
+    {
+        "rotation_range" : 90,
+        "width_shift_range" : 0.1,
+        "height_shift_range" : 0.1,
+        "brightness_range" : [-0.2, 0.2],
+        "shear_range" : 36,
+        "zoom_range" : 0.05,
+        "channel_shift_range" : 0,
+        "fill_mode" : "constant",
+        "cval" : 0,
+        "horizontal_flip" : true,
+        "vertical_flip" : true,
+        "rescale" : 1,
+        "preprocessing_function" : null,
+        "data_format" : null,
+        "validation_split" : 0,
+        "dtype" : null,
+        "batch_size" : 32,
+        "shuffle" : true,
+        "seed" : null,
+        "save_to_dir" : null,
+        "save_prefix" : "",
+        "save_format" : "png",
+        "subset" : null
+    }
+}

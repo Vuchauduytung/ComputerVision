@@ -1,0 +1,16 @@
+{
+    "name" : "test_data",
+    "properties" : 
+    {
+        "rescale" : 1,
+        "validation_split" : 0,
+        "dtype" : null,
+        "batch_size" : 32,
+        "shuffle" : true,
+        "seed" : null,
+        "save_to_dir" : null,
+        "save_prefix" : "",
+        "save_format" : "png",
+        "subset" : null
+    }
+}

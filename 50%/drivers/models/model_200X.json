@@ -1,0 +1,170 @@
+{
+    "name" : "model_200X",
+    "input_shape" : [50,50,3],
+    "format" : ".h5",
+    "CNN" :
+    {
+        "Layer1" :
+        {
+            "Conv2D" :
+            {
+                "filters" : 512,
+                "kernel_size" : [3,3],
+                "padding" : "same",
+                "activation" : "gelu"
+            },
+            "MaxPooling2D" : 
+            {
+                "pool_size" : [2,2],
+                "padding" : "same"
+            },
+            "BatchNormalization" : 
+            {}
+        },            
+        "Layer2" : 
+        {
+            "Conv2D" :
+            {
+                "filters" : 1024,
+                "kernel_size" : [3,3],
+                "padding" : "same",
+                "activation" : "gelu"
+            },
+            "MaxPooling2D" : 
+            {
+                "pool_size" : [2,2],
+                "padding" : "same"
+            },
+            "BatchNormalization" : 
+            {}
+        },    
+        "Layer3" : 
+        {
+            "Conv2D" :
+            {
+                "filters" : 2048,
+                "kernel_size" : [3,3],
+                "padding" : "same",
+                "activation" : "gelu"
+            },
+            "MaxPooling2D" : 
+            {
+                "pool_size" : [2,2],
+                "padding" : "same"
+            },
+            "BatchNormalization" : 
+            {}
+        },        
+        "Layer4" :
+        {
+            "Conv2D" :
+            {
+                "filters" : 1024,
+                "kernel_size" : [3,3],
+                "padding" : "same",
+                "activation" : "gelu"
+            },
+            "MaxPooling2D" : 
+            {
+                "pool_size" : [2,2],
+                "padding" : "same"
+            },
+            "BatchNormalization" : 
+            {}
+        },        
+        "Layer5" :
+        {
+            "Conv2D" :
+            {
+                "filters" : 512,
+                "kernel_size" : [3,3],
+                "padding" : "same",
+                "activation" : "gelu"
+            },
+            "MaxPooling2D" : 
+            {
+                "pool_size" : [2,2],
+                "padding" : "same"
+            },
+            "BatchNormalization" : 
+            {}
+        },        
+        "Layer6" :
+        {
+            "Conv2D" :
+            {
+                "filters" : 256,
+                "kernel_size" : [3,3],
+                "padding" : "same",
+                "activation" : "gelu"
+            },
+            "MaxPooling2D" : 
+            {
+                "pool_size" : [2,2],
+                "padding" : "same"
+            },
+            "BatchNormalization" : 
+            {}
+        },        
+        "Layer7" :
+        {
+            "Conv2D" :
+            {
+                "filters" : 128,
+                "kernel_size" : [3,3],
+                "padding" : "same",
+                "activation" : "gelu"
+            },
+            "MaxPooling2D" : 
+            {
+                "pool_size" : [2,2],
+                "padding" : "same"
+            },
+            "BatchNormalization" : 
+            {}
+        }   
+    },
+    "ANN" :
+    {
+        "Layer1" :
+        {
+            "Dense" :
+            {
+                "units" : 512,
+                "activation" : "gelu"
+            },
+            "BatchNormalization" : 
+            {}
+        },
+        "Layer2" :
+        {
+            "Dense" :
+            {
+                "units" : 2048,
+                "activation" : "gelu"
+            },
+            "BatchNormalization" : 
+            {}
+        },
+        "Layer3" :
+        {
+            "Dense" :
+            {
+                "units" : 1024,
+                "activation" : "gelu"
+            },
+            "BatchNormalization" : 
+            {}
+        },
+        "Layer4" :
+        {
+            "Dense" :
+            {
+                "units" : 4,
+                "activation" : "softmax"
+            },
+            "BatchNormalization" : 
+            {}
+        }
+    }
+}
